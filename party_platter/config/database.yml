@@ -1,0 +1,25 @@
+# postgreSQL
+#   gem install pg
+#
+#   Ensure the postgreSQL gem is defined in your Gemfile
+#   gem 'pg'
+#
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: party_platter_development
+  pool: 5
+  username: party_platter_dev
+  password: party_platter_dev
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: party_platter_test
+  pool: 5
+  username: party_platter_test
+  password: party_platter_test
