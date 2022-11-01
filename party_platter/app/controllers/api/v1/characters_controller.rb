@@ -1,5 +1,6 @@
 class Api::V1::CharactersController < ApplicationController
 
+    # GET : All Characters
     def index
         characters = Character.all 
       
@@ -10,7 +11,7 @@ class Api::V1::CharactersController < ApplicationController
         end
       end
 
-    # Create a new Character POST request
+    # POST : Create Character
     def create
         character = Character.new(character_params)
 
@@ -22,7 +23,7 @@ class Api::V1::CharactersController < ApplicationController
         end
     end
 
-    # Show a specific character GET request
+    # GET : List specific Character by :id
     def show
         character = Character.find(params[:id])
         if character
@@ -32,7 +33,7 @@ class Api::V1::CharactersController < ApplicationController
         end
     end
     
-    # Delete a specific character DELETE request
+    # DELETE : Specific deletion by :id
     def destroy
         character = Character.find(params[:id])
     
