@@ -2125,3 +2125,262 @@ Processing by Api::V1::CampaignsController#index as */*
 Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1150)
 
 
+Started GET "/api/v1/characters/" for ::1 at 2022-10-31 21:39:52 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CharactersController#index as */*
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2347)
+
+
+  
+SyntaxError (/Users/valkyrie/Programming/PartyPlatter/party_platter/app/models/character.rb:2: syntax error, unexpected integer literal, expecting `do' or '{' or '('
+...dates :name, length: {minimum 2}
+...                              ^
+):
+  
+app/models/character.rb:2: syntax error, unexpected integer literal, expecting `do' or '{' or '('
+app/models/character.rb:2: syntax error, unexpected integer literal, expecting `do' or '{' or '('
+app/controllers/api/v1/characters_controller.rb:4:in `index'
+Started GET "/api/v1/characters/" for ::1 at 2022-10-31 21:40:07 -0400
+Processing by Api::V1::CharactersController#index as */*
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 172)
+
+
+  
+SyntaxError (/Users/valkyrie/Programming/PartyPlatter/party_platter/app/models/character.rb:2: syntax error, unexpected integer literal, expecting `do' or '{' or '('
+...dates :name, length: {minimum 2}
+...                              ^
+):
+  
+app/models/character.rb:2: syntax error, unexpected integer literal, expecting `do' or '{' or '('
+app/models/character.rb:2: syntax error, unexpected integer literal, expecting `do' or '{' or '('
+app/controllers/api/v1/characters_controller.rb:4:in `index'
+Started GET "/api/v1/characters/" for ::1 at 2022-10-31 21:40:31 -0400
+Processing by Api::V1::CharactersController#index as */*
+  [1m[36mCharacter Load (2.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  ↳ app/controllers/api/v1/characters_controller.rb:7:in `index'
+Completed 200 OK in 16ms (Views: 6.6ms | ActiveRecord: 8.3ms | Allocations: 10762)
+
+
+Started POST "/api/v1/characters/?character[name]=Qwerty&character[strength]=13&character[dexterity]=13&character[constitution]=13&character[intelligence]=13&character[wisdom]=13&character[charisma]=13" for ::1 at 2022-10-31 21:54:53 -0400
+Processing by Api::V1::CharactersController#create as */*
+  Parameters: {"character"=>{"name"=>"Qwerty", "strength"=>"13", "dexterity"=>"13", "constitution"=>"13", "intelligence"=>"13", "wisdom"=>"13", "charisma"=>"13"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/characters_controller.rb:17:in `create'
+  [1m[36mCharacter Create (3.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "user_id", "strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Qwerty"], ["user_id", nil], ["strength", 13], ["dexterity", 13], ["constitution", 13], ["intelligence", 13], ["wisdom", 13], ["charisma", 13], ["created_at", "2022-11-01"], ["updated_at", "2022-11-01"]]
+  ↳ app/controllers/api/v1/characters_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/characters_controller.rb:17:in `create'
+Completed 201 Created in 25ms (Views: 0.2ms | ActiveRecord: 11.4ms | Allocations: 8705)
+
+
+Started POST "/api/v1/characters/?character[name]=Q&character[strength]=13&character[dexterity]=13&character[constitution]=13&character[intelligence]=13&character[wisdom]=13&character[charisma]=13" for ::1 at 2022-10-31 21:55:01 -0400
+Processing by Api::V1::CharactersController#create as */*
+  Parameters: {"character"=>{"name"=>"Q", "strength"=>"13", "dexterity"=>"13", "constitution"=>"13", "intelligence"=>"13", "wisdom"=>"13", "charisma"=>"13"}}
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 427)
+
+
+Started POST "/api/v1/characters/?character[name]=Q&character[strength]=13&character[dexterity]=d&character[constitution]=13&character[intelligence]=13&character[wisdom]=13&character[charisma]=13" for ::1 at 2022-10-31 21:58:14 -0400
+Processing by Api::V1::CharactersController#create as */*
+  Parameters: {"character"=>{"name"=>"Q", "strength"=>"13", "dexterity"=>"d", "constitution"=>"13", "intelligence"=>"13", "wisdom"=>"13", "charisma"=>"13"}}
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 7.9ms | Allocations: 4644)
+
+
+Started POST "/api/v1/characters/?character[name]=Qwe&character[strength]=13&character[dexterity]=d&character[constitution]=13&character[intelligence]=13&character[wisdom]=13&character[charisma]=13" for ::1 at 2022-10-31 21:58:26 -0400
+Processing by Api::V1::CharactersController#create as */*
+  Parameters: {"character"=>{"name"=>"Qwe", "strength"=>"13", "dexterity"=>"d", "constitution"=>"13", "intelligence"=>"13", "wisdom"=>"13", "charisma"=>"13"}}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 433)
+
+
+Started GET "/api/v1/characters/" for ::1 at 2022-10-31 21:59:19 -0400
+Processing by Api::V1::CharactersController#index as */*
+  [1m[36mCharacter Load (0.6ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  ↳ app/controllers/api/v1/characters_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.6ms | Allocations: 2820)
+
+
+Started POST "/api/v1/characters/?character[name]=Bailey&character[strength]=1&character[dexterity]=10&character[constitution]=10&character[intelligence]=10&character[wisdom]=10&character[charisma]=10" for ::1 at 2022-10-31 22:05:06 -0400
+Processing by Api::V1::CharactersController#create as */*
+  Parameters: {"character"=>{"name"=>"Bailey", "strength"=>"1", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/characters_controller.rb:17:in `create'
+  [1m[36mCharacter Create (0.7ms)[0m  [1m[32mINSERT INTO "characters" ("name", "user_id", "strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Bailey"], ["user_id", nil], ["strength", 1], ["dexterity", 10], ["constitution", 10], ["intelligence", 10], ["wisdom", 10], ["charisma", 10], ["created_at", "2022-11-01"], ["updated_at", "2022-11-01"]]
+  ↳ app/controllers/api/v1/characters_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/characters_controller.rb:17:in `create'
+Completed 201 Created in 20ms (Views: 0.2ms | ActiveRecord: 7.6ms | Allocations: 8674)
+
+
+Started POST "/api/v1/characters/?character[name]=Bailey&character[strength]=d&character[dexterity]=10&character[constitution]=10&character[intelligence]=10&character[wisdom]=10&character[charisma]=10" for ::1 at 2022-10-31 22:08:51 -0400
+Processing by Api::V1::CharactersController#create as */*
+  Parameters: {"character"=>{"name"=>"Bailey", "strength"=>"d", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 448)
+
+
+Started POST "/api/v1/characters/?character[name]=Bailey&character[strength]=10&character[dexterity]=d&character[constitution]=10&character[intelligence]=10&character[wisdom]=10&character[charisma]=10" for ::1 at 2022-10-31 22:09:03 -0400
+Processing by Api::V1::CharactersController#create as */*
+  Parameters: {"character"=>{"name"=>"Bailey", "strength"=>"10", "dexterity"=>"d", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}}
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 415)
+
+
+Started POST "/api/v1/characters/?character[name]=Bailey&character[strength]=10&character[dexterity]=10&character[constitution]=d&character[intelligence]=10&character[wisdom]=10&character[charisma]=10" for ::1 at 2022-10-31 22:10:27 -0400
+Processing by Api::V1::CharactersController#create as */*
+  Parameters: {"character"=>{"name"=>"Bailey", "strength"=>"10", "dexterity"=>"10", "constitution"=>"d", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}}
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 10.4ms | Allocations: 4266)
+
+
+Started POST "/api/v1/characters/?character[name]=Bailey&character[strength]=10&character[dexterity]=10&character[constitution]=10&character[intelligence]=d&character[wisdom]=10&character[charisma]=10" for ::1 at 2022-10-31 22:10:35 -0400
+Processing by Api::V1::CharactersController#create as */*
+  Parameters: {"character"=>{"name"=>"Bailey", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"d", "wisdom"=>"10", "charisma"=>"10"}}
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 420)
+
+
+Started POST "/api/v1/characters/?character[name]=Bailey&character[strength]=10&character[dexterity]=10&character[constitution]=10&character[intelligence]=10&character[wisdom]=d&character[charisma]=10" for ::1 at 2022-10-31 22:10:48 -0400
+Processing by Api::V1::CharactersController#create as */*
+  Parameters: {"character"=>{"name"=>"Bailey", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"d", "charisma"=>"10"}}
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 404)
+
+
+Started POST "/api/v1/characters/?character[name]=Bailey&character[strength]=10&character[dexterity]=10&character[constitution]=10&character[intelligence]=10&character[wisdom]=10&character[charisma]=d" for ::1 at 2022-10-31 22:10:56 -0400
+Processing by Api::V1::CharactersController#create as */*
+  Parameters: {"character"=>{"name"=>"Bailey", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"d"}}
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 404)
+
+
+Started POST "/api/v1/characters/?character[name]=Bailey&character[strength]=10&character[dexterity]=10&character[constitution]=10&character[intelligence]=10&character[wisdom]=10&character[charisma]=10d" for ::1 at 2022-10-31 22:11:03 -0400
+Processing by Api::V1::CharactersController#create as */*
+  Parameters: {"character"=>{"name"=>"Bailey", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10d"}}
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 405)
+
+
+Started POST "/api/v1/characters/?character[name]=Bailey&character[strength]=10&character[dexterity]=10&character[constitution]=10&character[intelligence]=10&character[wisdom]=10&character[charisma]=1%200" for ::1 at 2022-10-31 22:11:12 -0400
+Processing by Api::V1::CharactersController#create as */*
+  Parameters: {"character"=>{"name"=>"Bailey", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"1 0"}}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 404)
+
+
+Started POST "/api/v1/characters/?character[name]=Bailey&character[strength]=1&character[dexterity]=10&character[constitution]=10&character[intelligence]=10&character[wisdom]=10&character[charisma]=10" for ::1 at 2022-10-31 22:12:06 -0400
+Processing by Api::V1::CharactersController#create as */*
+  Parameters: {"character"=>{"name"=>"Bailey", "strength"=>"1", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}}
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 7.0ms | Allocations: 4242)
+
+
+Started POST "/api/v1/characters/?character[name]=Bailey&character[strength]=2&character[dexterity]=10&character[constitution]=10&character[intelligence]=10&character[wisdom]=10&character[charisma]=10" for ::1 at 2022-10-31 22:12:12 -0400
+Processing by Api::V1::CharactersController#create as */*
+  Parameters: {"character"=>{"name"=>"Bailey", "strength"=>"2", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}}
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 417)
+
+
+Started POST "/api/v1/characters/?character[name]=Bailey&character[strength]=3&character[dexterity]=10&character[constitution]=10&character[intelligence]=10&character[wisdom]=10&character[charisma]=10" for ::1 at 2022-10-31 22:12:17 -0400
+Processing by Api::V1::CharactersController#create as */*
+  Parameters: {"character"=>{"name"=>"Bailey", "strength"=>"3", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}}
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/characters_controller.rb:17:in `create'
+  [1m[36mCharacter Create (1.7ms)[0m  [1m[32mINSERT INTO "characters" ("name", "user_id", "strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Bailey"], ["user_id", nil], ["strength", 3], ["dexterity", 10], ["constitution", 10], ["intelligence", 10], ["wisdom", 10], ["charisma", 10], ["created_at", "2022-11-01"], ["updated_at", "2022-11-01"]]
+  ↳ app/controllers/api/v1/characters_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/characters_controller.rb:17:in `create'
+Completed 201 Created in 12ms (Views: 0.2ms | ActiveRecord: 5.7ms | Allocations: 2211)
+
+
+Started POST "/api/v1/characters/?character[name]=Bailey&character[strength]=20&character[dexterity]=10&character[constitution]=10&character[intelligence]=10&character[wisdom]=10&character[charisma]=10" for ::1 at 2022-10-31 22:12:26 -0400
+Processing by Api::V1::CharactersController#create as */*
+  Parameters: {"character"=>{"name"=>"Bailey", "strength"=>"20", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/characters_controller.rb:17:in `create'
+  [1m[36mCharacter Create (0.8ms)[0m  [1m[32mINSERT INTO "characters" ("name", "user_id", "strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Bailey"], ["user_id", nil], ["strength", 20], ["dexterity", 10], ["constitution", 10], ["intelligence", 10], ["wisdom", 10], ["charisma", 10], ["created_at", "2022-11-01"], ["updated_at", "2022-11-01"]]
+  ↳ app/controllers/api/v1/characters_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/characters_controller.rb:17:in `create'
+Completed 201 Created in 8ms (Views: 0.4ms | ActiveRecord: 1.6ms | Allocations: 2065)
+
+
+Started POST "/api/v1/characters/?character[name]=Bailey&character[strength]=21&character[dexterity]=10&character[constitution]=10&character[intelligence]=10&character[wisdom]=10&character[charisma]=10" for ::1 at 2022-10-31 22:12:31 -0400
+Processing by Api::V1::CharactersController#create as */*
+  Parameters: {"character"=>{"name"=>"Bailey", "strength"=>"21", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 401)
+
+
+Started GET "/api/v1/campaigns/" for ::1 at 2022-10-31 22:17:55 -0400
+Processing by Api::V1::CampaignsController#index as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 249)
+
+
+  
+SyntaxError (/Users/valkyrie/Programming/PartyPlatter/party_platter/app/models/campaign.rb:4: `${' is not allowed as a global variable name
+...only_integer: true, minimum: ${:minplayers}}
+...                             ^~
+/Users/valkyrie/Programming/PartyPlatter/party_platter/app/models/campaign.rb:4: syntax error, unexpected '{', expecting '}'
+...only_integer: true, minimum: ${:minplayers}}
+...                              ^
+):
+  
+app/models/campaign.rb:4: `${' is not allowed as a global variable name
+app/models/campaign.rb:4: syntax error, unexpected '{', expecting '}'
+app/models/campaign.rb:4: `${' is not allowed as a global variable name
+app/models/campaign.rb:4: syntax error, unexpected '{', expecting '}'
+app/controllers/api/v1/campaigns_controller.rb:4:in `index'
+Started GET "/api/v1/campaigns/" for ::1 at 2022-10-31 22:18:37 -0400
+Processing by Api::V1::CampaignsController#index as */*
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 5332)
+
+
+  
+NoMethodError (undefined method `valdiates' for Campaign:Class
+Did you mean?  validates
+               validates!
+               validate):
+  
+app/models/campaign.rb:4:in `<class:Campaign>'
+app/models/campaign.rb:1:in `<main>'
+app/controllers/api/v1/campaigns_controller.rb:4:in `index'
+Started GET "/api/v1/campaigns/" for ::1 at 2022-10-31 22:19:00 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.9ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 5.0ms | Allocations: 5584)
+
+
+Started POST "/api/v1/campaigns/?campaign[name]&campaign[minplayers]&campaign[maxplayers]" for ::1 at 2022-10-31 22:20:57 -0400
+Processing by Api::V1::CampaignsController#create as */*
+  Parameters: {"campaign"=>{"name"=>nil, "minplayers"=>nil, "maxplayers"=>nil}}
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 608)
+
+
+Started POST "/api/v1/campaigns/?campaign[name]=a&campaign[minplayers]&campaign[maxplayers]" for ::1 at 2022-10-31 22:21:05 -0400
+Processing by Api::V1::CampaignsController#create as */*
+  Parameters: {"campaign"=>{"name"=>"a", "minplayers"=>nil, "maxplayers"=>nil}}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 400)
+
+
+Started POST "/api/v1/campaigns/?campaign[name]=Validation%20Test&campaign[minplayers]&campaign[maxplayers]" for ::1 at 2022-10-31 22:21:29 -0400
+Processing by Api::V1::CampaignsController#create as */*
+  Parameters: {"campaign"=>{"name"=>"Validation Test", "minplayers"=>nil, "maxplayers"=>nil}}
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started POST "/api/v1/campaigns/?campaign[name]=Validation%20Test&campaign[minplayers]=5&campaign[maxplayers]=3" for ::1 at 2022-10-31 22:21:44 -0400
+Processing by Api::V1::CampaignsController#create as */*
+  Parameters: {"campaign"=>{"name"=>"Validation Test", "minplayers"=>"5", "maxplayers"=>"3"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:18:in `create'
+  [1m[36mCampaign Create (2.3ms)[0m  [1m[32mINSERT INTO "campaigns" ("created_by", "name", "minplayers", "maxplayers", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_by", nil], ["name", "Validation Test"], ["minplayers", 5], ["maxplayers", 3], ["created_at", "2022-11-01 02:21:44.273493"], ["updated_at", "2022-11-01 02:21:44.273493"]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:18:in `create'
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 6.1ms | Allocations: 2200)
+
+
+Started GET "/api/v1/campaigns/" for ::1 at 2022-10-31 22:27:24 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (0.7ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:7:in `index'
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 7.4ms | Allocations: 3794)
+
+
+Started GET "/api/v1/characters" for ::1 at 2022-10-31 22:27:45 -0400
+Processing by Api::V1::CharactersController#index as */*
+  [1m[36mCharacter Load (0.6ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  ↳ app/controllers/api/v1/characters_controller.rb:7:in `index'
+Completed 200 OK in 15ms (Views: 7.1ms | ActiveRecord: 7.2ms | Allocations: 6733)
+
+
