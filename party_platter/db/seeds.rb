@@ -23,3 +23,8 @@ campaigns = Campaign.create([{
     minplayers: "3",
     maxplayers: "5"
 }])
+
+users = User.create([{
+    email: "blank@blank.blank",
+    username: "blanky"
+}])

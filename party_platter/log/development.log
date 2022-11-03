@@ -2384,3 +2384,393 @@ Processing by Api::V1::CharactersController#index as */*
 Completed 200 OK in 15ms (Views: 7.1ms | ActiveRecord: 7.2ms | Allocations: 6733)
 
 
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2320699306586387055)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUsernameToUsers (20221103153207)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.0ms)[0m  [1m[35mALTER TABLE "users" ADD "username" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221103153207"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2320699306586387055)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/api/v1/users?users[email]=tester@testy.com&users[username]=TestPlayer1&users[password]=[FILTERED]&users[password_confirmation]=[FILTERED]" for ::1 at 2022-11-03 11:39:07 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant Api::V1::RegistrationsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started POST "/api/v1/users?users[email]=tester@testy.com&users[username]=TestPlayer1&users[password]=[FILTERED]&users[password_confirmation]=[FILTERED]" for ::1 at 2022-11-03 11:46:20 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant Api::V1::RegistrationsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started POST "/api/v1/users?users[email]=tester@testy.com&users[username]=TestPlayer1&users[password]=[FILTERED]&users[password_confirmation]=[FILTERED]" for ::1 at 2022-11-03 12:00:12 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::Users::RegistrationsController#create as */*
+  Parameters: {"users"=>{"email"=>"tester@testy.com", "username"=>"TestPlayer1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (4.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 26ms (Views: 0.1ms | ActiveRecord: 10.3ms | Allocations: 15432)
+
+
+Started POST "/api/v1/users?email=tester@testy.com&username=TestPlayer1&users[password]=[FILTERED]&users[password_confirmation]=[FILTERED]" for ::1 at 2022-11-03 12:02:24 -0400
+Processing by Api::V1::Users::RegistrationsController#create as */*
+  Parameters: {"email"=>"tester@testy.com", "username"=>"TestPlayer1", "users"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.3ms | Allocations: 4296)
+
+
+Started POST "/api/v1/users?email=tester@testy.com&username=TestPlayer1&users[password]=[FILTERED]&users[password_confirmation]=[FILTERED]" for ::1 at 2022-11-03 12:09:59 -0400
+Processing by Api::V1::Users::RegistrationsController#create as */*
+  Parameters: {"email"=>"tester@testy.com", "username"=>"TestPlayer1", "users"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 17ms (Views: 0.0ms | ActiveRecord: 8.4ms | Allocations: 9988)
+
+
+Started POST "/api/v1/users?users[email]=tester@testy.com&users[username]=TestPlayer1&users[password]=[FILTERED]&users[password_confirmation]=[FILTERED]" for ::1 at 2022-11-03 12:10:47 -0400
+Processing by Api::V1::Users::RegistrationsController#create as */*
+  Parameters: {"users"=>{"email"=>"tester@testy.com", "username"=>"TestPlayer1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (5.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 6.0ms | Allocations: 4198)
+
+
+Started POST "/api/v1/users?users[email]=tester@testy.com&users[username]=TestPlayer1&users[password]=[FILTERED]&users[password_confirmation]=[FILTERED]" for ::1 at 2022-11-03 12:51:48 -0400
+Processing by Api::V1::Users::RegistrationsController#create as */*
+  Parameters: {"users"=>{"email"=>"tester@testy.com", "username"=>"TestPlayer1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 10ms (Allocations: 5650)
+
+
+  
+NoMethodError (undefined method `authenticate_user!' for #<Api::V1::Users::RegistrationsController:0x00000000017930>
+
+              target.send(@method_name, &block)
+                    ^^^^^
+Did you mean?  authenticate_scope!):
+  
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:106:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/api/v1/users?users[email]=tester@testy.com&users[username]=TestPlayer1&users[password]=[FILTERED]&users[password_confirmation]=[FILTERED]" for ::1 at 2022-11-03 12:52:13 -0400
+Processing by Api::V1::Users::RegistrationsController#create as */*
+  Parameters: {"users"=>{"email"=>"tester@testy.com", "username"=>"TestPlayer1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 23ms (Views: 0.0ms | ActiveRecord: 7.4ms | Allocations: 10076)
+
+
+Started POST "/api/v1/users?users[email]=tester@testy.com&users[username]=TestPlayer1&users[password]=[FILTERED]&users[password_confirmation]=[FILTERED]" for ::1 at 2022-11-03 14:08:37 -0400
+Processing by Api::V1::Users::RegistrationsController#create as */*
+  Parameters: {"users"=>{"email"=>"tester@testy.com", "username"=>"TestPlayer1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 61ms (Views: 0.5ms | ActiveRecord: 13.5ms | Allocations: 6797)
+
+
+Started POST "/api/v1/users?users[email]=tester@testy.com&users[username]=TestUser1&users[password]=[FILTERED]&users[password_confirmation]=[FILTERED]" for ::1 at 2022-11-03 14:09:10 -0400
+Processing by Api::V1::Users::RegistrationsController#create as */*
+  Parameters: {"users"=>{"email"=>"tester@testy.com", "username"=>"TestUser1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 2.0ms | Allocations: 4198)
+
+
+Started POST "/api/v1/users?users[email]=tester@testy.com&users[username]=TestUser1&users[password]=[FILTERED]&users[password_confirmation]=[FILTERED]" for ::1 at 2022-11-03 14:26:24 -0400
+Processing by Api::V1::Users::RegistrationsController#create as */*
+  Parameters: {"users"=>{"email"=>"tester@testy.com", "username"=>"TestUser1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 31ms (Views: 0.1ms | ActiveRecord: 6.5ms | Allocations: 6758)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2320699306586387055)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddJtiToUsers (20221103191547)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "users" ADD "jti" character varying NOT NULL[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_jti" ON "users" ("jti")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221103191547"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2320699306586387055)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2320699306586387055)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2320699306586387055)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/api/v1/users?users[email]=tester@testy.com&users[username]=TestUser1&users[password]=[FILTERED]&users[password_confirmation]=[FILTERED]" for ::1 at 2022-11-03 15:54:07 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/users"):
+  
+Started PATCH "/api/v1/users?users[email]=tester@testy.com&users[username]=TestUser1&users[password]=[FILTERED]&users[password_confirmation]=[FILTERED]" for ::1 at 2022-11-03 15:55:09 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/v1/users"):
+  
+Started PATCH "/api/v1/signup?users[email]=tester@testy.com&users[username]=TestUser1&users[password]=[FILTERED]&users[password_confirmation]=[FILTERED]" for ::1 at 2022-11-03 15:55:51 -0400
+Processing by Api::V1::Users::RegistrationsController#update as */*
+  Parameters: {"users"=>{"email"=>"tester@testy.com", "username"=>"TestUser1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 248)
+
+
+Started POST "/api/v1/signup?users[email]=tester@testy.com&users[username]=TestUser1&users[password]=[FILTERED]&users[password_confirmation]=[FILTERED]" for ::1 at 2022-11-03 15:55:59 -0400
+Processing by Api::V1::Users::RegistrationsController#create as */*
+  Parameters: {"users"=>{"email"=>"tester@testy.com", "username"=>"TestUser1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 23ms (Views: 0.1ms | ActiveRecord: 6.1ms | Allocations: 16318)
+
+
+Started POST "/api/v1/signup?email=tester@testy.com&username=TestUser1&password=[FILTERED]&password_confirmation=[FILTERED]" for ::1 at 2022-11-03 16:00:29 -0400
+Processing by Api::V1::Users::RegistrationsController#create as */*
+  Parameters: {"email"=>"tester@testy.com", "username"=>"TestUser1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 9ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 5518)
+
+
+Started POST "/api/v1/signup/?email=tester@testy.com&username=TestUser1&password=[FILTERED]&password_confirmation=[FILTERED]" for ::1 at 2022-11-03 16:02:36 -0400
+Processing by Api::V1::Users::RegistrationsController#create as */*
+  Parameters: {"email"=>"tester@testy.com", "username"=>"TestUser1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 5ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 5443)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCampaign Create (1.4ms)[0m  [1m[32mINSERT INTO "campaigns" ("created_by", "name", "minplayers", "maxplayers", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_by", 0], ["name", "Dungeon Divers"], ["minplayers", 3], ["maxplayers", 5], ["created_at", "2022-11-03 20:07:12.993065"], ["updated_at", "2022-11-03 20:07:12.993065"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "blank@blank.blank"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "blank@blank.blank"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "blanky"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Started POST "/api/v1/signup/?email=tester@testy.com&username=TestUser1&password=[FILTERED]&password_confirmation=[FILTERED]" for ::1 at 2022-11-03 16:07:22 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::Users::RegistrationsController#create as */*
+  Parameters: {"email"=>"tester@testy.com", "username"=>"TestUser1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 26ms (Views: 0.2ms | ActiveRecord: 7.2ms | Allocations: 18059)
+
+
+Started PATCH "/api/v1/signup/?email=tester@testy.com&username=TestUser1&password=[FILTERED]&password_confirmation=[FILTERED]" for ::1 at 2022-11-03 16:07:27 -0400
+Processing by Api::V1::Users::RegistrationsController#update as */*
+  Parameters: {"email"=>"tester@testy.com", "username"=>"TestUser1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 140)
+
+
+Started POST "/api/v1/signup?email=tester@testy.com&username=TestUser1&password=[FILTERED]&password_confirmation=[FILTERED]" for ::1 at 2022-11-03 16:07:38 -0400
+Processing by Api::V1::Users::RegistrationsController#create as */*
+  Parameters: {"email"=>"tester@testy.com", "username"=>"TestUser1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 10ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 5513)
+
+
+Started POST "/api/v1/signup?email=tester@testy.com&username=TestUser1&password=[FILTERED]&password_confirmation=[FILTERED]" for ::1 at 2022-11-03 16:08:22 -0400
+Processing by Api::V1::Users::RegistrationsController#create as */*
+  Parameters: {"email"=>"tester@testy.com", "username"=>"TestUser1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 16ms (Views: 0.1ms | ActiveRecord: 4.5ms | Allocations: 8768)
+
+
+Started POST "/api/v1/users/signup?email=tester@testy.com&username=TestUser1&password=[FILTERED]&password_confirmation=[FILTERED]" for ::1 at 2022-11-03 16:10:18 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/users/signup"):
+  
+Started POST "/api/v1/users?signup?email=tester@testy.com&username=TestUser1&password=[FILTERED]&password_confirmation=[FILTERED]" for ::1 at 2022-11-03 16:10:32 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/users"):
+  
+Started POST "/api/v1/users/?email=tester@testy.com&username=TestUser1&password=[FILTERED]&password_confirmation=[FILTERED]" for ::1 at 2022-11-03 16:10:44 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/users"):
+  
+Started GET "/api/v1/characters" for ::1 at 2022-11-03 16:11:23 -0400
+Processing by Api::V1::CharactersController#index as HTML
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  ↳ app/controllers/api/v1/characters_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 7.9ms | ActiveRecord: 4.2ms | Allocations: 10538)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-11-03 16:11:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/api/v1/users" for ::1 at 2022-11-03 16:11:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users"):
+  
+Started POST "/api/v1/users/?email=tester@testy.com&username=TestUser1&password=[FILTERED]&password_confirmation=[FILTERED]" for ::1 at 2022-11-03 16:11:55 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/users"):
+  
+Started POST "/api/v1/users?email=tester@testy.com&username=TestUser1&password=[FILTERED]&password_confirmation=[FILTERED]" for ::1 at 2022-11-03 16:12:04 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/users"):
+  
+Started POST "/api/v1/users/" for ::1 at 2022-11-03 16:12:19 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/users"):
+  
+Started GET "/api/v1/users/" for ::1 at 2022-11-03 16:12:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users"):
+  
+Started GET "/api/v1/users/signup" for ::1 at 2022-11-03 16:13:12 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users/signup"):
+  
+Started GET "/api/v1/signup" for ::1 at 2022-11-03 16:13:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/signup"):
+  
+Started POST "/api/v1/signup/?users[email]=tester@test.test&users[username]=tester1&users[password]=[FILTERED]&users[password_confirmation]=[FILTERED]" for ::1 at 2022-11-03 16:15:16 -0400
+Processing by Api::V1::Users::RegistrationsController#create as */*
+  Parameters: {"users"=>{"email"=>"tester@test.test", "username"=>"tester1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 11ms (Views: 0.1ms | ActiveRecord: 3.6ms | Allocations: 9175)
+
+
+Started POST "/api/v1/signup/?users[email]=tester@test.test&users[username]=tester1&users[password]=[FILTERED]&users[password_confirmation]=[FILTERED]" for ::1 at 2022-11-03 16:16:13 -0400
+Processing by Api::V1::Users::RegistrationsController#create as */*
+  Parameters: {"users"=>{"email"=>"tester@test.test", "username"=>"tester1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 11ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 5443)
+
+
+Started POST "/api/v1/signup/?users[email]=tester@test.test&users[username]=tester1&users[password]=[FILTERED]&users[password_confirmation]=[FILTERED]" for ::1 at 2022-11-03 16:28:40 -0400
+Processing by Api::V1::Users::RegistrationsController#create as */*
+  Parameters: {"users"=>{"email"=>"tester@test.test", "username"=>"tester1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 21ms (Views: 0.1ms | ActiveRecord: 9.6ms | Allocations: 8148)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCampaign Create (0.4ms)[0m  [1m[32mINSERT INTO "campaigns" ("created_by", "name", "minplayers", "maxplayers", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_by", 0], ["name", "Dungeon Divers"], ["minplayers", 3], ["maxplayers", 5], ["created_at", "2022-11-03 20:31:26.675204"], ["updated_at", "2022-11-03 20:31:26.675204"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "blank@blank.blank"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "blank@blank.blank"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "blanky"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
