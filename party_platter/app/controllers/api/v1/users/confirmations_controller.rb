@@ -27,4 +27,7 @@ class Api::V1::Users::ConfirmationsController < Devise::ConfirmationsController
   # def after_confirmation_path_for(resource_name, resource)
   #   super(resource_name, resource)
   # end
+  def resource_name
+    return "user"
+  end
 end

@@ -46,4 +46,7 @@ class Api::V1::Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+  def resource_name
+    return "user"
+  end
 end

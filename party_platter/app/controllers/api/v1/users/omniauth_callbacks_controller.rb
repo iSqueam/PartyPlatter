@@ -27,4 +27,7 @@ class Api::V1::Users::OmniauthCallbacksController < Devise::OmniauthCallbacksCon
   # def after_omniauth_failure_path_for(scope)
   #   super(scope)
   # end
+  def resource_name
+    return "user"
+  end
 end

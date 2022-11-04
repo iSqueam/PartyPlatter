@@ -27,4 +27,7 @@ class Api::V1::Users::UnlocksController < Devise::UnlocksController
   # def after_unlock_path_for(resource)
   #   super(resource)
   # end
+  def resource_name
+    return "user"
+  end
 end
