@@ -59,7 +59,6 @@ class Api::V1::CampaignsController < ApplicationController
 
     def campaign_params
         params.require(:campaign).permit(
-            #:id,
             :name,
             :minplayers,
             :maxplayers
