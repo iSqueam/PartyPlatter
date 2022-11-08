@@ -6,4 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :validatable
   validates :email, uniqueness: true, presence: true
   validates :username, uniqueness: true, presence: true
+
+  # def function()
+  # end
 end
