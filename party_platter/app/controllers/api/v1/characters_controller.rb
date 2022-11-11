@@ -19,7 +19,7 @@ class Api::V1::CharactersController < ApplicationController
             render json: {status: "SUCCESS", message: "Character was created successfully", data: character},
             status: :created
         else
-            render json: {status: "FAILURE", message: "Error creating character!"}
+            render json: {status: :bad_request, message: "Error creating character!"}
         end
     end
 
@@ -67,7 +67,7 @@ class Api::V1::CharactersController < ApplicationController
             :intelligence,
             :wisdom,
             :charisma
-            )
+            ) 
     end
 
 end

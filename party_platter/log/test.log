@@ -180,3 +180,818 @@ Processing by Api::V1::Users::RegistrationsController#create as JSON
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
 Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 5.5ms | Allocations: 12839)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-10 18:57:59 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"jamal_langosh", "email"=>"sulema_powlowski@ryan.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sulema_powlowski@ryan.net"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sulema_powlowski@ryan.net"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jamal_langosh"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "sulema_powlowski@ryan.net"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-10 23:57:59.633164"], ["updated_at", "2022-11-10 23:57:59.633164"], ["username", "jamal_langosh"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 80ms (Views: 0.2ms | ActiveRecord: 14.7ms | Allocations: 12819)
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started PATCH "/api/v1/signup.json" for 127.0.0.1 at 2022-11-10 18:57:59 -0500
+Processing by Api::V1::Users::RegistrationsController#update as JSON
+  Parameters: {"user"=>{"username"=>"aliza_considine", "email"=>"stanton_anderson@bailey.biz", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 3473)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-10 19:03:17 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 00:03:17.028480"], ["updated_at", "2022-11-11 00:03:17.028480"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 19ms (Views: 0.1ms | ActiveRecord: 6.4ms | Allocations: 12815)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started PATCH "/api/v1/signup.json" for 127.0.0.1 at 2022-11-10 19:03:17 -0500
+Processing by Api::V1::Users::RegistrationsController#update as JSON
+  Parameters: {"user"=>{"username"=>"testxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 3474)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-10 19:05:25 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 00:05:25.110993"], ["updated_at", "2022-11-11 00:05:25.110993"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 6.0ms | Allocations: 12823)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/login.json?user[username]=testxyz&user[email]=testxyz%40test.test&user[password]=[FILTERED]&user[password_confirmation]=[FILTERED]" for 127.0.0.1 at 2022-11-10 19:05:25 -0500
+Processing by Api::V1::Users::SessionsController#new as JSON
+  Parameters: {"user"=>{"username"=>"testxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :email, :password_confirmation. Context: { controller: Api::V1::Users::SessionsController, action: new, request: #<ActionDispatch::Request:0x00000001080cdf10>, params: {"user"=>{"username"=>"testxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"api/v1/users/sessions", "action"=>"new", "format"=>"json"} }[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 667)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-10 19:08:35 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 00:08:35.107066"], ["updated_at", "2022-11-11 00:08:35.107066"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 18ms (Views: 0.4ms | ActiveRecord: 4.5ms | Allocations: 12823)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/login.json?user[username]=testxyz&user[email]=testxyz%40test.test&user[password]=[FILTERED]" for 127.0.0.1 at 2022-11-10 19:08:35 -0500
+Processing by Api::V1::Users::SessionsController#new as JSON
+  Parameters: {"user"=>{"username"=>"testxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :email. Context: { controller: Api::V1::Users::SessionsController, action: new, request: #<ActionDispatch::Request:0x00000001057da748>, params: {"user"=>{"username"=>"testxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]"}, "controller"=>"api/v1/users/sessions", "action"=>"new", "format"=>"json"} }[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 664)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-10 19:39:40 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 00:39:40.299102"], ["updated_at", "2022-11-11 00:39:40.299102"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 19ms (Views: 0.1ms | ActiveRecord: 7.0ms | Allocations: 12824)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/login.json?user[username]=testxyz&user[email]=testxyz%40test.test&user[password]=[FILTERED]" for 127.0.0.1 at 2022-11-10 19:39:40 -0500
+Processing by Api::V1::Users::SessionsController#new as JSON
+  Parameters: {"user"=>{"username"=>"testxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :email. Context: { controller: Api::V1::Users::SessionsController, action: new, request: #<ActionDispatch::Request:0x0000000106172fa8>, params: {"user"=>{"username"=>"testxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]"}, "controller"=>"api/v1/users/sessions", "action"=>"new", "format"=>"json"} }[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 664)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-10 19:40:20 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 00:40:20.086884"], ["updated_at", "2022-11-11 00:40:20.086884"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 4.4ms | Allocations: 12823)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/login.json?user[username]=testxyz&user[email]=testxyz%40test.test&user[password]=[FILTERED]" for 127.0.0.1 at 2022-11-10 19:40:20 -0500
+Processing by Api::V1::Users::SessionsController#new as JSON
+  Parameters: {"user"=>{"username"=>"testxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :email. Context: { controller: Api::V1::Users::SessionsController, action: new, request: #<ActionDispatch::Request:0x000000010a954510>, params: {"user"=>{"username"=>"testxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]"}, "controller"=>"api/v1/users/sessions", "action"=>"new", "format"=>"json"} }[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 664)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.1ms)[0m  [1m[35mALTER TABLE "campaigns" DISABLE TRIGGER ALL;ALTER TABLE "characters" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.1ms)[0m  [1m[31mDELETE FROM "characters";
+DELETE FROM "users";
+INSERT INTO "characters" ("id", "name", "user_id", "strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma", "created_at", "updated_at") VALUES (980190962, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-11-11', '2022-11-11'), (298486374, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-11-11', '2022-11-11');
+INSERT INTO "users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES (980190962, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-11-11 00:40:20.969022', '2022-11-11 00:40:20.969022', DEFAULT), (298486374, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2022-11-11 00:40:20.969022', '2022-11-11 00:40:20.969022', DEFAULT)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-10 19:40:51 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 00:40:51.346852"], ["updated_at", "2022-11-11 00:40:51.346852"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 17.4ms | Allocations: 12823)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/login.json?user[username]=testxyz&user[email]=testxyz%40test.test&user[password]=[FILTERED]" for 127.0.0.1 at 2022-11-10 19:40:51 -0500
+Processing by Api::V1::Users::SessionsController#new as JSON
+  Parameters: {"user"=>{"username"=>"testxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :email. Context: { controller: Api::V1::Users::SessionsController, action: new, request: #<ActionDispatch::Request:0x00000001065a8d48>, params: {"user"=>{"username"=>"testxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]"}, "controller"=>"api/v1/users/sessions", "action"=>"new", "format"=>"json"} }[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 664)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 12:34:05 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 17:34:05.433437"], ["updated_at", "2022-11-11 17:34:05.433437"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 8.8ms | Allocations: 12819)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/login.json?user[username]=testxyz&user[email]=testxyz%40test.test&user[password]=[FILTERED]" for 127.0.0.1 at 2022-11-11 12:34:05 -0500
+Processing by Api::V1::Users::SessionsController#new as JSON
+  Parameters: {"user"=>{"username"=>"testxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :email. Context: { controller: Api::V1::Users::SessionsController, action: new, request: #<ActionDispatch::Request:0x0000000108383ef8>, params: {"user"=>{"username"=>"testxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]"}, "controller"=>"api/v1/users/sessions", "action"=>"new", "format"=>"json"} }[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 664)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 12:36:29 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 17:36:29.128684"], ["updated_at", "2022-11-11 17:36:29.128684"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 20ms (Views: 0.1ms | ActiveRecord: 7.5ms | Allocations: 12823)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/login.json" for 127.0.0.1 at 2022-11-11 12:36:29 -0500
+Processing by Api::V1::Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"testxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 230)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 12:45:22 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 17:45:22.208307"], ["updated_at", "2022-11-11 17:45:22.208307"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 20ms (Views: 0.1ms | ActiveRecord: 7.6ms | Allocations: 12819)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 12:45:22 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"ernie.herzog", "email"=>"roman@monahan.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "roman@monahan.co"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "roman@monahan.co"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ernie.herzog"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "roman@monahan.co"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 17:45:22.328389"], ["updated_at", "2022-11-11 17:45:22.328389"], ["username", "ernie.herzog"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 1529)
+Started POST "/api/v1/login.json" for 127.0.0.1 at 2022-11-11 12:45:22 -0500
+Processing by Api::V1::Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"testxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 227)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 12:45:49 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 17:45:49.991067"], ["updated_at", "2022-11-11 17:45:49.991067"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 4.8ms | Allocations: 12823)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 12:45:50 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"nell", "email"=>"kayleigh@heaney-pfannerstill.name", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (11.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kayleigh@heaney-pfannerstill.name"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kayleigh@heaney-pfannerstill.name"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "nell"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "kayleigh@heaney-pfannerstill.name"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 17:45:50.108561"], ["updated_at", "2022-11-11 17:45:50.108561"], ["username", "nell"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 12.4ms | Allocations: 1531)
+Started POST "/api/v1/login.json" for 127.0.0.1 at 2022-11-11 12:45:50 -0500
+Processing by Api::V1::Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"testxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 227)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 12:48:30 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 17:48:30.556225"], ["updated_at", "2022-11-11 17:48:30.556225"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 5.3ms | Allocations: 12823)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 12:48:30 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"elwood.kuhn", "email"=>"winford_harvey@ratke.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "winford_harvey@ratke.co"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "winford_harvey@ratke.co"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "elwood.kuhn"], ["LIMIT", 1]]
+  [1m[36mUser Create (11.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "winford_harvey@ratke.co"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 17:48:30.675480"], ["updated_at", "2022-11-11 17:48:30.675480"], ["username", "elwood.kuhn"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 12.2ms | Allocations: 1529)
+Started POST "/api/v1/login.json" for 127.0.0.1 at 2022-11-11 12:48:30 -0500
+Processing by Api::V1::Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"chet", "email"=>"jame.jacobson@nader-schmitt.co", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 227)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 12:51:43 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 17:51:43.062902"], ["updated_at", "2022-11-11 17:51:43.062902"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 4.6ms | Allocations: 12824)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 12:51:43 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"cleotilde.wisozk", "email"=>"belle@kautzer.name", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "belle@kautzer.name"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "belle@kautzer.name"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "cleotilde.wisozk"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "belle@kautzer.name"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 17:51:43.167648"], ["updated_at", "2022-11-11 17:51:43.167648"], ["username", "cleotilde.wisozk"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.3ms | Allocations: 1529)
+Started POST "/api/v1/login.json" for 127.0.0.1 at 2022-11-11 12:51:43 -0500
+Processing by Api::V1::Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"cleotilde.wisozk", "email"=>"belle@kautzer.name", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 227)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:30:57 -0500
+Processing by Api::V1::CharactersController#index as JSON
+  [1m[36mCharacter Load (1.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.2ms | Allocations: 3446)
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:30:57 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:30:57.463024"], ["updated_at", "2022-11-11 19:30:57.463024"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 7.8ms | Allocations: 10088)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:30:57 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"tony_hane", "email"=>"trinidad@hane-morissette.info", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "trinidad@hane-morissette.info"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "trinidad@hane-morissette.info"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "tony_hane"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "trinidad@hane-morissette.info"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:30:57.619070"], ["updated_at", "2022-11-11 19:30:57.619070"], ["username", "tony_hane"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 1529)
+Started POST "/api/v1/login.json" for 127.0.0.1 at 2022-11-11 14:30:57 -0500
+Processing by Api::V1::Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"tony_hane", "email"=>"trinidad@hane-morissette.info", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 227)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:39:43 -0500
+Processing by Api::V1::CharactersController#index as JSON
+  [1m[36mCharacter Load (0.6ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 3446)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:39:43 -0500
+Processing by Api::V1::CharactersController#create as JSON
+  Parameters: {"character"=>{"user"=>{"username"=>"patty.marks", "email"=>"rhoda@donnelly-muller.biz"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}}
+[31mUnpermitted parameter: :user. Context: { controller: Api::V1::CharactersController, action: create, request: #<ActionDispatch::Request:0x0000000107ab83a0>, params: {"character"=>{"user"=>{"username"=>"patty.marks", "email"=>"rhoda@donnelly-muller.biz"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}, "controller"=>"api/v1/characters", "action"=>"create", "format"=>"json"} }[0m
+Completed 200 OK in 25ms (Views: 0.1ms | ActiveRecord: 17.8ms | Allocations: 8513)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:39:43 -0500
+Processing by Api::V1::CharactersController#create as JSON
+  Parameters: {"character"=>{"user"=>{"username"=>"taylor_padberg", "email"=>"pearlie@schiller.io"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"21"}}
+[31mUnpermitted parameter: :user. Context: { controller: Api::V1::CharactersController, action: create, request: #<ActionDispatch::Request:0x0000000107bb2210>, params: {"character"=>{"user"=>{"username"=>"taylor_padberg", "email"=>"pearlie@schiller.io"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"21"}, "controller"=>"api/v1/characters", "action"=>"create", "format"=>"json"} }[0m
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms | Allocations: 638)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:39:43 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:39:43.482857"], ["updated_at", "2022-11-11 19:39:43.482857"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 4.6ms | Allocations: 8769)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:39:43 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"lia_roberts", "email"=>"rodger.stokes@schmidt.name", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rodger.stokes@schmidt.name"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rodger.stokes@schmidt.name"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lia_roberts"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "rodger.stokes@schmidt.name"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:39:43.488603"], ["updated_at", "2022-11-11 19:39:43.488603"], ["username", "lia_roberts"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 1525)
+Started POST "/api/v1/login.json" for 127.0.0.1 at 2022-11-11 14:39:43 -0500
+Processing by Api::V1::Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"lia_roberts", "email"=>"rodger.stokes@schmidt.name", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 227)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:40:00 -0500
+Processing by Api::V1::CharactersController#index as JSON
+  [1m[36mCharacter Load (0.6ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 3446)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:40:01 -0500
+Processing by Api::V1::CharactersController#create as JSON
+  Parameters: {"character"=>{"user"=>{"username"=>"gricelda", "email"=>"jonas@johns.co"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}}
+[31mUnpermitted parameter: :user. Context: { controller: Api::V1::CharactersController, action: create, request: #<ActionDispatch::Request:0x000000010b9fbcd8>, params: {"character"=>{"user"=>{"username"=>"gricelda", "email"=>"jonas@johns.co"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}, "controller"=>"api/v1/characters", "action"=>"create", "format"=>"json"} }[0m
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 6.2ms | Allocations: 8513)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:40:01 -0500
+Processing by Api::V1::CharactersController#create as JSON
+  Parameters: {"character"=>{"user"=>{"username"=>"dominique.cummerata", "email"=>"florentino@emard-bashirian.net"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"21"}}
+[31mUnpermitted parameter: :user. Context: { controller: Api::V1::CharactersController, action: create, request: #<ActionDispatch::Request:0x000000010baea180>, params: {"character"=>{"user"=>{"username"=>"dominique.cummerata", "email"=>"florentino@emard-bashirian.net"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"21"}, "controller"=>"api/v1/characters", "action"=>"create", "format"=>"json"} }[0m
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms | Allocations: 638)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:40:01 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:40:01.060581"], ["updated_at", "2022-11-11 19:40:01.060581"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 3.9ms | Allocations: 8763)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:40:01 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"colin", "email"=>"marvella_ritchie@mayert.info", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "marvella_ritchie@mayert.info"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "marvella_ritchie@mayert.info"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "colin"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "marvella_ritchie@mayert.info"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:40:01.066064"], ["updated_at", "2022-11-11 19:40:01.066064"], ["username", "colin"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1525)
+Started POST "/api/v1/login.json" for 127.0.0.1 at 2022-11-11 14:40:01 -0500
+Processing by Api::V1::Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"colin", "email"=>"marvella_ritchie@mayert.info", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 227)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:41:34 -0500
+Processing by Api::V1::CharactersController#index as JSON
+  [1m[36mCharacter Load (0.6ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 3445)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:41:35 -0500
+Processing by Api::V1::CharactersController#create as JSON
+  Parameters: {"character"=>{"user"=>{"username"=>"shelia.gusikowski", "email"=>"alayna_anderson@herzog.name"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}}
+[31mUnpermitted parameter: :user. Context: { controller: Api::V1::CharactersController, action: create, request: #<ActionDispatch::Request:0x0000000117dbc190>, params: {"character"=>{"user"=>{"username"=>"shelia.gusikowski", "email"=>"alayna_anderson@herzog.name"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}, "controller"=>"api/v1/characters", "action"=>"create", "format"=>"json"} }[0m
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 16.4ms | Allocations: 8507)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:41:35 -0500
+Processing by Api::V1::CharactersController#create as JSON
+  Parameters: {"character"=>{"user"=>{"username"=>"samella.ebert", "email"=>"liza@robel.org"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"21"}}
+[31mUnpermitted parameter: :user. Context: { controller: Api::V1::CharactersController, action: create, request: #<ActionDispatch::Request:0x0000000117eb6140>, params: {"character"=>{"user"=>{"username"=>"samella.ebert", "email"=>"liza@robel.org"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"21"}, "controller"=>"api/v1/characters", "action"=>"create", "format"=>"json"} }[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 638)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:41:35 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:41:35.139522"], ["updated_at", "2022-11-11 19:41:35.139522"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 3.5ms | Allocations: 8770)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:41:35 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"morris.ankunding", "email"=>"antonina@streich.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "antonina@streich.net"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "antonina@streich.net"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "morris.ankunding"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "antonina@streich.net"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:41:35.145373"], ["updated_at", "2022-11-11 19:41:35.145373"], ["username", "morris.ankunding"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 1523)
+Started POST "/api/v1/login.json" for 127.0.0.1 at 2022-11-11 14:41:35 -0500
+Processing by Api::V1::Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"morris.ankunding", "email"=>"antonina@streich.net", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 227)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:42:26 -0500
+Processing by Api::V1::CharactersController#index as JSON
+  [1m[36mCharacter Load (0.6ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 3443)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:42:26 -0500
+Processing by Api::V1::CharactersController#create as JSON
+  Parameters: {"character"=>{"user"=>{"username"=>"toccara_watsica", "email"=>"jason@krajcik-zboncak.biz"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}}
+[31mUnpermitted parameter: :user. Context: { controller: Api::V1::CharactersController, action: create, request: #<ActionDispatch::Request:0x00000001070842f8>, params: {"character"=>{"user"=>{"username"=>"toccara_watsica", "email"=>"jason@krajcik-zboncak.biz"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}, "controller"=>"api/v1/characters", "action"=>"create", "format"=>"json"} }[0m
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 4.1ms | Allocations: 8508)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:42:26 -0500
+Processing by Api::V1::CharactersController#create as JSON
+  Parameters: {"character"=>{"user"=>{"username"=>"jackqueline", "email"=>"jeraldine.kilback@rau-rau.com"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"21"}}
+[31mUnpermitted parameter: :user. Context: { controller: Api::V1::CharactersController, action: create, request: #<ActionDispatch::Request:0x000000010717e6e0>, params: {"character"=>{"user"=>{"username"=>"jackqueline", "email"=>"jeraldine.kilback@rau-rau.com"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"21"}, "controller"=>"api/v1/characters", "action"=>"create", "format"=>"json"} }[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 638)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:42:26 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:42:26.243272"], ["updated_at", "2022-11-11 19:42:26.243272"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 3.9ms | Allocations: 8773)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:42:26 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"gertude.berge", "email"=>"carisa.fisher@davis.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "carisa.fisher@davis.net"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "carisa.fisher@davis.net"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gertude.berge"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "carisa.fisher@davis.net"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:42:26.248576"], ["updated_at", "2022-11-11 19:42:26.248576"], ["username", "gertude.berge"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1523)
+Started POST "/api/v1/login.json" for 127.0.0.1 at 2022-11-11 14:42:26 -0500
+Processing by Api::V1::Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"gertude.berge", "email"=>"carisa.fisher@davis.net", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 227)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:43:13 -0500
+Processing by Api::V1::CharactersController#index as JSON
+  [1m[36mCharacter Load (0.6ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 3445)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:43:13 -0500
+Processing by Api::V1::CharactersController#create as JSON
+  Parameters: {"character"=>{"user"=>{"username"=>"jerrod.raynor", "email"=>"bernard.stamm@medhurst-lang.net"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}}
+[31mUnpermitted parameter: :user. Context: { controller: Api::V1::CharactersController, action: create, request: #<ActionDispatch::Request:0x0000000107874148>, params: {"character"=>{"user"=>{"username"=>"jerrod.raynor", "email"=>"bernard.stamm@medhurst-lang.net"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}, "controller"=>"api/v1/characters", "action"=>"create", "format"=>"json"} }[0m
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 3.3ms | Allocations: 8508)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:43:13 -0500
+Processing by Api::V1::CharactersController#create as JSON
+  Parameters: {"character"=>{"user"=>{"username"=>"colby", "email"=>"gayla@hoppe.co"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"21"}}
+[31mUnpermitted parameter: :user. Context: { controller: Api::V1::CharactersController, action: create, request: #<ActionDispatch::Request:0x000000010796e030>, params: {"character"=>{"user"=>{"username"=>"colby", "email"=>"gayla@hoppe.co"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"21"}, "controller"=>"api/v1/characters", "action"=>"create", "format"=>"json"} }[0m
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms | Allocations: 638)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:43:13 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:43:13.603673"], ["updated_at", "2022-11-11 19:43:13.603673"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 3.6ms | Allocations: 8774)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:43:13 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"dorsey", "email"=>"norris@blick-veum.org", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "norris@blick-veum.org"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "norris@blick-veum.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dorsey"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "norris@blick-veum.org"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:43:13.609839"], ["updated_at", "2022-11-11 19:43:13.609839"], ["username", "dorsey"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 1523)
+Started POST "/api/v1/login.json" for 127.0.0.1 at 2022-11-11 14:43:13 -0500
+Processing by Api::V1::Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"dorsey", "email"=>"norris@blick-veum.org", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 227)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:44:13 -0500
+Processing by Api::V1::CharactersController#index as JSON
+  [1m[36mCharacter Load (0.6ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 3445)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:44:13 -0500
+Processing by Api::V1::CharactersController#create as JSON
+  Parameters: {"character"=>{"user"=>{"username"=>"deshawn", "email"=>"olivia.cremin@jacobs.co"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}}
+[31mUnpermitted parameter: :user. Context: { controller: Api::V1::CharactersController, action: create, request: #<ActionDispatch::Request:0x0000000107b37b28>, params: {"character"=>{"user"=>{"username"=>"deshawn", "email"=>"olivia.cremin@jacobs.co"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}, "controller"=>"api/v1/characters", "action"=>"create", "format"=>"json"} }[0m
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 5.4ms | Allocations: 8508)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:44:13 -0500
+Processing by Api::V1::CharactersController#create as JSON
+  Parameters: {"character"=>{"user"=>{"username"=>"elois.hand", "email"=>"tammie@swift.org"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"21"}}
+[31mUnpermitted parameter: :user. Context: { controller: Api::V1::CharactersController, action: create, request: #<ActionDispatch::Request:0x0000000107c25aa8>, params: {"character"=>{"user"=>{"username"=>"elois.hand", "email"=>"tammie@swift.org"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"21"}, "controller"=>"api/v1/characters", "action"=>"create", "format"=>"json"} }[0m
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms | Allocations: 638)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:44:13 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:44:13.289220"], ["updated_at", "2022-11-11 19:44:13.289220"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 3.5ms | Allocations: 8772)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:44:13 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"buford.hilll", "email"=>"collin@buckridge-adams.io", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "collin@buckridge-adams.io"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "collin@buckridge-adams.io"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "buford.hilll"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "collin@buckridge-adams.io"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:44:13.295518"], ["updated_at", "2022-11-11 19:44:13.295518"], ["username", "buford.hilll"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 1525)
+Started POST "/api/v1/login.json" for 127.0.0.1 at 2022-11-11 14:44:13 -0500
+Processing by Api::V1::Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"buford.hilll", "email"=>"collin@buckridge-adams.io", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 227)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:45:12 -0500
+Processing by Api::V1::CharactersController#index as JSON
+  [1m[36mCharacter Load (0.7ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 3445)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:45:12 -0500
+Processing by Api::V1::CharactersController#create as JSON
+  Parameters: {"character"=>{"user"=>{"username"=>"gabriel.baumbach", "email"=>"jeannetta_crooks@smitham-luettgen.io"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}}
+[31mUnpermitted parameter: :user. Context: { controller: Api::V1::CharactersController, action: create, request: #<ActionDispatch::Request:0x00000001079cc180>, params: {"character"=>{"user"=>{"username"=>"gabriel.baumbach", "email"=>"jeannetta_crooks@smitham-luettgen.io"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}, "controller"=>"api/v1/characters", "action"=>"create", "format"=>"json"} }[0m
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 16.5ms | Allocations: 8508)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:45:12 -0500
+Processing by Api::V1::CharactersController#create as JSON
+  Parameters: {"character"=>{"user"=>{"username"=>"mariel_renner", "email"=>"kristopher.dach@wolf-kuhn.biz"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"21"}}
+[31mUnpermitted parameter: :user. Context: { controller: Api::V1::CharactersController, action: create, request: #<ActionDispatch::Request:0x0000000107ac65e0>, params: {"character"=>{"user"=>{"username"=>"mariel_renner", "email"=>"kristopher.dach@wolf-kuhn.biz"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"21"}, "controller"=>"api/v1/characters", "action"=>"create", "format"=>"json"} }[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 638)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:45:12 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:45:12.750115"], ["updated_at", "2022-11-11 19:45:12.750115"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 3.8ms | Allocations: 8770)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:45:12 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"nigel", "email"=>"debrah@ziemann.org", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "debrah@ziemann.org"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "debrah@ziemann.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "nigel"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "debrah@ziemann.org"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:45:12.755624"], ["updated_at", "2022-11-11 19:45:12.755624"], ["username", "nigel"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 1523)
+Started POST "/api/v1/login.json" for 127.0.0.1 at 2022-11-11 14:45:12 -0500
+Processing by Api::V1::Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"nigel", "email"=>"debrah@ziemann.org", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 227)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:46:41 -0500
+Processing by Api::V1::CharactersController#index as JSON
+  [1m[36mCharacter Load (0.7ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 3445)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:46:42 -0500
+Processing by Api::V1::CharactersController#create as JSON
+  Parameters: {"character"=>{"user"=>{"username"=>"bo.nolan", "email"=>"lawrence_anderson@crona.name"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}}
+[31mUnpermitted parameter: :user. Context: { controller: Api::V1::CharactersController, action: create, request: #<ActionDispatch::Request:0x00000001077ffa00>, params: {"character"=>{"user"=>{"username"=>"bo.nolan", "email"=>"lawrence_anderson@crona.name"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}, "controller"=>"api/v1/characters", "action"=>"create", "format"=>"json"} }[0m
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 4.4ms | Allocations: 8508)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:46:42 -0500
+Processing by Api::V1::CharactersController#create as JSON
+  Parameters: {"character"=>{"user"=>{"username"=>"virgil_klein", "email"=>"illa@altenwerth.info"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"21"}}
+[31mUnpermitted parameter: :user. Context: { controller: Api::V1::CharactersController, action: create, request: #<ActionDispatch::Request:0x00000001078edfe8>, params: {"character"=>{"user"=>{"username"=>"virgil_klein", "email"=>"illa@altenwerth.info"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"21"}, "controller"=>"api/v1/characters", "action"=>"create", "format"=>"json"} }[0m
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms | Allocations: 638)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:46:42 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:46:42.124042"], ["updated_at", "2022-11-11 19:46:42.124042"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 3.8ms | Allocations: 8769)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:46:42 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"refugio", "email"=>"hong@reichel.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hong@reichel.co"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hong@reichel.co"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "refugio"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "hong@reichel.co"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:46:42.129610"], ["updated_at", "2022-11-11 19:46:42.129610"], ["username", "refugio"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 1523)
+Started POST "/api/v1/login.json" for 127.0.0.1 at 2022-11-11 14:46:42 -0500
+Processing by Api::V1::Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"refugio", "email"=>"hong@reichel.co", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 227)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:51:44 -0500
+Processing by Api::V1::CharactersController#index as JSON
+  [1m[36mCharacter Load (0.6ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 3446)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:51:44 -0500
+Processing by Api::V1::CharactersController#create as JSON
+  Parameters: {"character"=>{"user"=>{"username"=>"mariam", "email"=>"phylis@harvey.biz"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}}
+[31mUnpermitted parameter: :user. Context: { controller: Api::V1::CharactersController, action: create, request: #<ActionDispatch::Request:0x0000000109773c88>, params: {"character"=>{"user"=>{"username"=>"mariam", "email"=>"phylis@harvey.biz"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}, "controller"=>"api/v1/characters", "action"=>"create", "format"=>"json"} }[0m
+Completed 200 OK in 25ms (Views: 0.1ms | ActiveRecord: 16.6ms | Allocations: 8508)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/characters.json" for 127.0.0.1 at 2022-11-11 14:51:44 -0500
+Processing by Api::V1::CharactersController#create as JSON
+  Parameters: {"character"=>{"user"=>{"username"=>"cleo.hessel", "email"=>"toshia.casper@kuhic.net"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"21"}}
+[31mUnpermitted parameter: :user. Context: { controller: Api::V1::CharactersController, action: create, request: #<ActionDispatch::Request:0x0000000109861ff0>, params: {"character"=>{"user"=>{"username"=>"cleo.hessel", "email"=>"toshia.casper@kuhic.net"}, "name"=>"testy", "strength"=>"10", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"21"}, "controller"=>"api/v1/characters", "action"=>"create", "format"=>"json"} }[0m
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms | Allocations: 638)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:51:44 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"textxyz", "email"=>"testxyz@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testxyz@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "textxyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testxyz@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:51:44.974430"], ["updated_at", "2022-11-11 19:51:44.974430"], ["username", "textxyz"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 4.4ms | Allocations: 8767)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup.json" for 127.0.0.1 at 2022-11-11 14:51:44 -0500
+Processing by Api::V1::Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"username"=>"alden", "email"=>"voncile@jacobi-borer.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "voncile@jacobi-borer.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "voncile@jacobi-borer.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "alden"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "voncile@jacobi-borer.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-11 19:51:44.979825"], ["updated_at", "2022-11-11 19:51:44.979825"], ["username", "alden"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 1525)
+Started POST "/api/v1/login.json" for 127.0.0.1 at 2022-11-11 14:51:44 -0500
+Processing by Api::V1::Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"alden", "email"=>"voncile@jacobi-borer.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 227)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
