@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "UsersControllers", type: :request do
+RSpec.describe "UsersControllers:", type: :request do
   describe "GET /index" do
     pending "add some examples (or delete) #{__FILE__}"
   end
-  describe "devise user functions:" do
+  describe "Devise User functions:" do
     it "Create a New User" do
       password = "password"
       post api_v1_user_registration_path(format: :json), params: {user: {
@@ -15,7 +15,7 @@ RSpec.describe "UsersControllers", type: :request do
       }}
       expect(response).to be_successful
     end
-    it "user login" do
+    it "Login" do
       username = Faker::Internet.username
       email = Faker::Internet.email
       password = "password"

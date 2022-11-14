@@ -3290,3 +3290,10 @@ Processing by Api::V1::Users::RegistrationsController#create as */*
 Completed 422 Unprocessable Entity in 264ms (Views: 0.1ms | ActiveRecord: 8.1ms | Allocations: 10843)
 
 
+Started POST "/api/v1/characters/?character[name]=testerA&character[strength]=21&character[dexterity]=10&character[constitution]=10&character[intelligence]=10&character[wisdom]=10&character[charisma]=10" for ::1 at 2022-11-14 05:51:29 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CharactersController#create as */*
+  Parameters: {"character"=>{"name"=>"testerA", "strength"=>"21", "dexterity"=>"10", "constitution"=>"10", "intelligence"=>"10", "wisdom"=>"10", "charisma"=>"10"}}
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 20.3ms | Allocations: 12704)
+
+
