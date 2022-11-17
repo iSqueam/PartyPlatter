@@ -19,7 +19,7 @@ class Api::V1::CharactersController < ApplicationController
             render json: {status: "SUCCESS", message: "Character was created successfully", data: character},
             status: :created
         else
-            render json: {status: "FAILURE", message: "Error creating character!"}
+            render json: {status: "FAILURE", message: "Error creating character!", errors: character.errors}
         end
     end
 
@@ -59,7 +59,7 @@ class Api::V1::CharactersController < ApplicationController
 
     def character_params
         params.require(:character).permit(
-            #:user,
+            :user_id,
             :name,
             :strength,
             :dexterity,
