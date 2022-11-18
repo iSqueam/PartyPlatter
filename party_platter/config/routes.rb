@@ -14,7 +14,10 @@ Rails.application.routes.draw do
         confirmations: 'api/v1/users/confirmations',
         unlocks: 'api/v1/users/unlocks'
       }
-      resources :characters, :campaigns, only: [:create, :show, :update, :destroy, :index]
+      resources :characters, only: [:create, :show, :update, :destroy, :index]
+      resources :campaigns, only: [:create, :show, :update, :destroy, :index] do
+        put :add_character, on: :member
+      end
       get '/current_user', to: 'current_user#index'
     end
   end

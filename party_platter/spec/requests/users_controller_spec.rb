@@ -9,9 +9,7 @@ RSpec.describe "UsersControllers:", type: :request do
       password_confirmation: "password"
     })
   end
-  # describe "GET /index" do
-  #   pending "add some examples (or delete) #{__FILE__}"
-  # end
+
   describe "Devise User functions:" do
     it "Create a New User" do
       expect {
@@ -24,6 +22,7 @@ RSpec.describe "UsersControllers:", type: :request do
     }.to change(User, :count).by(1)
       expect(response).to be_successful
     end
+    
     it "Login" do
       username = @test_user.username
       email = @test_user.email

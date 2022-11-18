@@ -8,13 +8,25 @@ RSpec.describe "Characters:", type: :request do
       password: "password",
       password_confirmation: "password"
     })
+    @test_character = Character.create({
+      user_id: @test_user.id,
+      name: "Tony Stark",
+      strength: "10",
+      dexterity: "10",
+      constitution: "10",
+      intelligence: "10",
+      wisdom: "10",
+      charisma: "10"
+    })
   end
   describe "Character CRUD:" do
     it "Get all Characters" do
       get api_v1_characters_path(format: :json)
+      json = JSON.parse(response.body)
+      expect(json["data"].count).to eq(Character.count)
     end
     it "Creates a new Character" do
-      post api_v1_characters_path(format: :json), params: {character: {
+      expect {post api_v1_characters_path(format: :json), params: {character: {
         user_id: @test_user.id,
         name: "testy",
         strength: "10",
@@ -23,33 +35,32 @@ RSpec.describe "Characters:", type: :request do
         intelligence: "10",
         wisdom: "10",
         charisma: "10"
-      }}
-      json = JSON.parse(response.body)
+      }}}.to change(Character, :count).by(1)
       expect(response).to be_successful
-      expect(json["status"]).to eq("SUCCESS")
     end
-    it "GET a specific characterr" do
-      post api_v1_characters_path(format: :json), params: {character: {
-        #user: Faker::Internet.user,
-        id: "1"
-      }}
-      expect(response).to be_successful
+    it "GET a specific character" do
+      get api_v1_character_path(@test_character.id)
+      json = JSON.parse(response.body)
+      expect(json["data"]["name"]).to eq(@test_character.name)
     end
     it "UPDATE a specific character" do
-      patch api_v1_character_path(id: "1"), params: {character: {
+      patch api_v1_character_path(@test_character.id), params: {character: {
         user_id: @test_user.id,
         name: "New Name",
-        strength: "10",
-        dexterity: "10",
-        constitution: "10",
-        intelligence: "10",
-        wisdom: "10",
-        charisma: "10"
+        strength: "11",
+        dexterity: "11",
+        constitution: "11",
+        intelligence: "11",
+        wisdom: "11",
+        charisma: "11"
         }}
+      json = JSON.parse(response.body)
+      expect(json["data"]["strength"]).to eq(11)
       expect(response).to be_successful
     end
     it "DESTROY a specific character" do
-      delete api_v1_character_path(id: "1")
+      expect {delete api_v1_character_path(id: @test_character.id)}.to change(Character, :count).by(-1)
+      expect(Character.find_by_id(@test_character.id)).to eq(nil)
       expect(response).to be_successful
     end
   end

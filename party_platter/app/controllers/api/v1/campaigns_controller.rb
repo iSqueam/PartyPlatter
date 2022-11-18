@@ -13,8 +13,6 @@ class Api::V1::CampaignsController < ApplicationController
     # Create a new campaign POST request
     def create
         campaign = Campaign.new(campaign_params)
-        puts("="*10)
-        puts(campaign_params)
         if campaign.save
             render json: {status: "Success!", message: "New Campaign created!", data: campaign}, status: :ok
         else
@@ -53,6 +51,17 @@ class Api::V1::CampaignsController < ApplicationController
         else
             render json: {status: "Failure!", message: "Campaign could not be updated"}, status: :unprocessable_entity
         end
+    end
+
+    # Add a character to a Campaign
+    def add_character
+        #campaign id is in url, character id gets passed in params
+            #add_character_api_v1_campaign_path(:id)
+        #make a join table
+            #is a permanent table(migration)
+        #add the join table as a model
+        #update the activerecord references in campaings, characters, and join table model
+        #make controller do what it needs to do
     end
 
     private
