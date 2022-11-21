@@ -35,6 +35,8 @@ class Api::V1::CampaignsController < ApplicationController
     def destroy
         campaign = Campaign.find(params[:id])
 
+        # add in methods to also destroy related memberships
+
         if campaign.destroy!
             render json: {status: "Success!", message: "Campaign deleted!"}, status: :ok
         else
@@ -57,11 +59,30 @@ class Api::V1::CampaignsController < ApplicationController
     def add_character
         #campaign id is in url, character id gets passed in params
             #add_character_api_v1_campaign_path(:id)
-        #make a join table
-            #is a permanent table(migration)
-        #add the join table as a model
-        #update the activerecord references in campaings, characters, and join table model
+        #make a join table **
+            #is a permanent table(migration) **
+        #add the join table as a model **
+        #update the activerecord references in campaings, characters, and join table model **??
         #make controller do what it needs to do
+
+
+        # membership = Membership.find_by(params[:campaign_id])
+        # puts(membership.to_json)
+        # puts(member_params)
+        # if membership.update!(member_params)
+        #     render json: {status: "Success!", message: "Member added!"}, status: :ok
+        # else
+        #     render json: {status: "Failure!", message: "Member not added!"}, status: :unprocessable_entity
+        # end
+
+        @campaign = Campaign.find(params[:id])
+        @character = Character.find(params[:character_id])
+        membership = Membership.new({campaign_id: @campaign.id, character_id: @character.id})
+        if membership.save!#(member_params)
+            render json: {status: "Success!", message: "Member added!"}, status: :ok
+        else
+            render json: {status: "Failure!", message: "Member not added!"}, status: :unprocessable_entity
+        end
     end
 
     private
@@ -72,5 +93,8 @@ class Api::V1::CampaignsController < ApplicationController
             :minplayers,
             :maxplayers
         )
+    end
+
+    def member_params
     end
 end

@@ -1,6 +1,11 @@
 require "factory_bot_rails"
 
 FactoryBot.define do
+  factory :membership do
+    campaign { nil }
+    character { nil }
+  end
+
   factory :campaign do
     name {"New Campaign"}
     minplayers {"2"}
