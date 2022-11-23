@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       resources :characters, only: [:create, :show, :update, :destroy, :index]
       resources :campaigns, only: [:create, :show, :update, :destroy, :index] do
         post :add_character, on: :member
+        delete :remove_character, on: :member
       end
       get '/current_user', to: 'current_user#index'
     end

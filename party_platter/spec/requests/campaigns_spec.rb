@@ -13,6 +13,16 @@ RSpec.describe "CampaignsController:", type: :request do
       password: "password",
       password_confirmation: "password"
     })
+    @character = Character.create({
+      user_id: @test_user.id,
+      name: "Tony Stark",
+      strength: "10",
+      dexterity: "10",
+      constitution: "10",
+      intelligence: "10",
+      wisdom: "10",
+      charisma: "10"
+    })
   end
   describe "Campaigns Index" do
     it "Get All Campaigns" do
@@ -47,6 +57,17 @@ RSpec.describe "CampaignsController:", type: :request do
     end
     it "Deletes a Campaign" do
       expect {delete api_v1_campaign_path(@campaign.id)}.to change(Campaign, :count).by(-1)
+      expect(response).to be_successful
+    end
+  end
+  describe "Campaign Memberships:" do
+    it "Adds a Character to a Campaign" do
+      expect {post add_character_api_v1_campaign_path(@campaign.id), params: {character_id: @character.id}}.to change(Membership, :count).by(1)
+      expect(response).to be_successful
+    end
+    it "Removes a Character from a Campaign" do
+      @campaign.characters << @character
+      expect {delete remove_character_api_v1_campaign_path(@campaign.id), params: {character_id: @character.id}}.to change(Membership, :count).by(-1)
       expect(response).to be_successful
     end
   end
